@@ -1,0 +1,104 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@section styles{
+    <link href="~/Content/plugins/slick-1.5.9/slick/slick.css" rel="stylesheet" />
+    <link href="~/Content/plugins/slick-1.5.9/slick/slick-theme.css" rel="stylesheet"/>
+}
+<div ng-app="app">
+    <div ng-controller="HomeIndexController">
+        <!-- ======== Region: #content ======== -->
+        <div id="content">
+            <div class="container">
+                <!-- Featured Attractions -->
+                <div class="block features">
+                    <h2 class="title-divider">
+                        <span>Featured <span class="de-em">Attractions</span></span>
+                        <small>Click on attraction for more information</small>
+                    </h2>
+
+                    <!-- Top Slider -->
+                    <!-- ======== SLICK SLIDER ======== -->
+                    <slick class="slider" infinite="true" slides-to-show="4" slides-to-scroll="4" dots="true" responsive="breakpoints">
+                        <div ng-repeat="feature in Featured">
+                            <div>
+                                <h3>{{feature.title}}</h3><img data-lazy="{{feature.imageUrl}}" />
+                            </div>
+                        </div>
+                    </slick>
+
+                </div>
+            </div>
+            
+            <div>@{ Html.RenderPartial("../Partial/_Banner");}</div>
+
+            <div class="container">
+                <!-- 'All' Attractions -->
+                <div class="block">
+                    <h2 class="title-divider">
+                        <span>All: <span class="de-em">Attractions</span></span>
+                        <small>Great savings on hundreds of attractions Worldwide</small>
+                    </h2>
+
+                    <div ng-repeat="attraction in Attractions">
+                        <div class="col-md-3 pricing-stack">
+                            <div ng-class="$index%2==0 ? 'well active' : 'well'">
+                                <h3 class="title">
+                                    <span class="em">{{attraction.title}}</span> <span class="fancy">{{attraction.type}}</span>
+                                </h3>
+                                <img ng-src="{{attraction.imageUrl}}" />
+                                <ul class="unstyled points">
+                                    <li>5 star hotels</li>
+                                    <li>River Cruise</li>
+                                    <li>Sight Seeing {{$index}}</li>
+                                </ul>
+                                <p class="price">
+                                    <span class="currency">£</span>
+                                    <span class="digits">{{attraction.price}}</span>
+                                </p>
+                                <a class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="text-center">
+                    <ul class="pagination">
+                        <li class="disabled"><a href="#">«</a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">»</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ======== Region: #content-below ======== -->
+<div id="content-below" class="wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="upsell">
+                <small class="muted">90 day money back guarantee <span class="spacer">//</span> 24/7 telephone support <span class="spacer">//</span> FREE Insurance <span class="spacer">//</span> Family Discount <span class="spacer">//</span> Online Assistance </small>
+                <a href="pricing.htm" class="btn btn-primary">Book your trip Today! <i class="fa fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/js/app.js"></script>
+    <script src="~/Scripts/js/HomeIndexController.js"></script>
+
+    <script src="~/Content/plugins/slick-1.5.9/slick/slick.min.js"></script>
+    <script src="~/Content/plugins/slick-1.5.9/angular-slick/slick.min.js"></script>
+}

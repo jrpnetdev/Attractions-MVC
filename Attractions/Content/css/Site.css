@@ -1,0 +1,46 @@
+﻿
+.has-navbar-fixed-top #content {
+  padding-top: 5px;
+}
+
+.well img {
+    width: 195px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 6px;
+    padding-bottom: 5px;
+}
+
+.responsive img {
+    width: 195px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.slider img {
+    width: 195px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* added the following to give the background color of the arrows as red for visibility, the default which can be found in the slick-theme.css was white */
+.slick-prev:before,
+.slick-next:before {
+    color: #55a79a;
+}
+
+.pricing-stack .well.active .title {
+    font-size: 22px;
+    text-transform: none;
+}
+
+.pagination>li>a {
+    float: none;
+}
+
+.banner {
+    margin-top: 10px;
+}

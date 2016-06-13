@@ -1,0 +1,107 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+}
+
+<!-- ======== Region: #content ======== -->
+<div id="content">
+    <div class="container">
+        <div class="row">
+            <!-- sidebar -->
+            <div class="col-md-3 sidebar">
+
+                <!-- Sections Menu-->
+                <div class="section-menu">
+                    <ul class="nav nav-list">
+                        <li class="nav-header">In This Section</li>
+                        <li>
+                            <a href="@Url.Action("About", "Home")" class="first">
+                                About Us
+                                <small>Basic Version</small>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="@Url.Action("Contact", "Home")">
+                                Contact Us
+                                <small>How to get in touch</small>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--main content-->
+            <div class="col-md-9">
+                <h2 class="title-divider">
+                    <span>Contact <span class="de-em">Us</span></span>
+                    <small>Ways To Get In Touch</small>
+                </h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <form id="contact-form" method="post" role="form">
+                            <fieldset>
+                                <div class="form-group">
+                                    <label class="sr-only" for="contact-name">Name</label>
+                                    <input type="text" class="form-control" id="contact-name" placeholder="Name" name="Name" data-val="true" data-val-required="Name is required.">
+                                    <span class="field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="contact-email">Email</label>
+                                    <input type="email" class="form-control" id="contact-email" placeholder="Email" name="Email" data-val="true" data-val-required="Email is required.">
+                                    <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="contact-message">Message</label>
+                                    <textarea rows="12" class="form-control" id="contact-message" placeholder="Message" name="Message" data-val="true" data-val-required="Message is required."></textarea>
+                                    <span class="field-validation-valid" data-valmsg-for="Message" data-valmsg-replace="true"></span>
+                                </div>
+                                <input type="submit" class="btn btn-primary" value="Send Message"><br/>
+                                @if (ViewBag.MailSent != null && ViewBag.MailSent)
+                                {
+                                    <div class="alert alert-success">
+                                        <button class="close" data-dismiss="alert" type="button">×</button>
+                                        <h4> Thank You</h4>
+                                        Your mail has been sent! We will respond as quickly as possible.
+                                    </div>
+                                }
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <p>
+                            <abbr title="Phone"><i class="fa fa-phone"></i></abbr>
+                            012234 55667789
+                        </p>
+                        <p>
+                            <abbr title="Email"><i class="fa fa-envelope"></i></abbr>
+                            jrpnetdev@gmail.com
+                        </p>
+                        <p>
+                            <abbr title="Address"><i class="fa fa-home"></i></abbr>
+                            Sunshine House, Sunville. SUN12 8LU.
+                        </p>
+                        <p>
+                            <a href="https://maps.google.co.uk/maps?q=London&amp;ie=UTF8&amp;hq=&amp;hnear=London,+United+Kingdom&amp;gl=uk&amp;t=m&amp;ll=51.510238,-0.127029&amp;spn=0.042735,0.102654&amp;z=12&amp;">
+                                <img src="~/Content/img/misc/map.png" alt="Location map" class="img-thumbnail"/>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  
+<!-- ======== Region: #content-below ======== -->
+<div id="content-below" class="wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="upsell">
+                <small class="muted">99.9% Uptime <span class="spacer">//</span> Free upgrade assistence <span class="spacer">//</span> 24/7 Support <span class="spacer">//</span> Plans from $19.99/month <span class="spacer">//</span> </small>
+                <a href="pricing.htm" class="btn btn-primary">Start your Free Trial Today! <i class="fa fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
