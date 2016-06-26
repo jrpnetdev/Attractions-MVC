@@ -4,7 +4,7 @@
 }
 @section styles{
     <link href="~/Content/plugins/slick-1.5.9/slick/slick.css" rel="stylesheet" />
-    <link href="~/Content/plugins/slick-1.5.9/slick/slick-theme.css" rel="stylesheet"/>
+    <link href="~/Content/plugins/slick-1.5.9/slick/slick-theme.css" rel="stylesheet" />
 }
 <div ng-app="app">
     <div ng-controller="HomeIndexController">
@@ -23,14 +23,15 @@
                     <slick class="slider" infinite="true" slides-to-show="4" slides-to-scroll="4" dots="true" responsive="breakpoints">
                         <div ng-repeat="feature in Featured">
                             <div>
-                                <h3>{{feature.title}}</h3><img data-lazy="{{feature.imageUrl}}" />
+                                <h3 class="text-center">{{feature.title}}</h3>
+                                <img data-lazy="{{feature.imageUrl}}" />
                             </div>
                         </div>
                     </slick>
 
                 </div>
             </div>
-            
+
             <div>@{ Html.RenderPartial("../Partial/_Banner");}</div>
 
             <div class="container">
@@ -44,6 +45,7 @@
                     <div ng-repeat="attraction in Attractions">
                         <div class="col-md-3 pricing-stack">
                             <div ng-class="$index%2==0 ? 'well active' : 'well'">
+                                <span class="add"><i class="fa fa-plus-square" title="Add to Favourites"></i></span>
                                 <h3 class="title">
                                     <span class="em">{{attraction.title}}</span> <span class="fancy">{{attraction.type}}</span>
                                 </h3>

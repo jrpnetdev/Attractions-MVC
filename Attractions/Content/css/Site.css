@@ -44,3 +44,9 @@
 .banner {
     margin-top: 10px;
 }
+
+.add {
+    float: right;
+    padding: 0;
+    margin-top: 0;
+}
