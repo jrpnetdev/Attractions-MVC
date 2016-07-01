@@ -22,9 +22,6 @@ They can also search, filter and sort attractions by country, region and destina
  - Uses Ninject (MVC5 7 WebApi) as IoC container for Dependency Injection (constructor Injection)
  - Mobile and tablet friendly, responsive design - automatically adjusts layout.
 
- - Jasmine JS unit tests (not 100% coverage)
- - NUnit .Net Unit tests (not 100% coverage)
-
 ###Database Set Up Instructions:
 
  - Default connection in Web.config - (localdb)/ProjectsV13 - ensure able to connect in SQL Server Explorer, or change connection string to desired server.
@@ -42,6 +39,8 @@ They can also search, filter and sort attractions by country, region and destina
 ###ToDo:
 
  - Login & Register
+ - Jasmine JS unit tests
+ - NUnit .Net Unit tests
 
 ###Developed Using:
  - Visual Studio 2015 Community Edition (Update 2)

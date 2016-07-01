@@ -6,7 +6,12 @@
     <link href="~/Content/plugins/slick-1.5.9/slick/slick.css" rel="stylesheet" />
     <link href="~/Content/plugins/slick-1.5.9/slick/slick-theme.css" rel="stylesheet" />
 }
-<div ng-app="app">
+
+@section scripts{
+    <script src="~/Scripts/js/HomeIndexController.js"></script>
+}
+
+<div>
     <div ng-controller="HomeIndexController">
         <!-- ======== Region: #content ======== -->
         <div id="content">
@@ -20,14 +25,18 @@
 
                     <!-- Top Slider -->
                     <!-- ======== SLICK SLIDER ======== -->
-                    <slick class="slider" infinite="true" slides-to-show="4" slides-to-scroll="4" dots="true" responsive="breakpoints">
-                        <div ng-repeat="feature in Featured">
-                            <div>
-                                <h3 class="text-center">{{feature.title}}</h3>
-                                <img data-lazy="{{feature.imageUrl}}" />
+
+                    
+                    <div ng-show="ready">
+                        <slick class="slider" infinite="true" slides-to-show="4" slides-to-scroll="4" dots="true" responsive="breakpoints">
+                            <div ng-repeat="feature in Featured">
+                                <div>
+                                    <h3 class="text-center">{{feature.title}}</h3>
+                                    <img data-lazy="{{feature.imageUrl}}" />
+                                </div>
                             </div>
-                        </div>
-                    </slick>
+                        </slick>
+                    </div>
 
                 </div>
             </div>
@@ -45,7 +54,7 @@
                     <div ng-repeat="attraction in Attractions">
                         <div class="col-md-3 pricing-stack">
                             <div ng-class="$index%2==0 ? 'well active' : 'well'">
-                                <span class="add"><i class="fa fa-plus-square" title="Add to Favourites"></i></span>
+                                <span class="add"><i class="fa fa-plus-square" title="Add to Favourites" ng-click="addToFavourites()"></i></span>
                                 <h3 class="title">
                                     <span class="em">{{attraction.title}}</span> <span class="fancy">{{attraction.type}}</span>
                                 </h3>
@@ -59,7 +68,7 @@
                                     <span class="currency">£</span>
                                     <span class="digits">{{attraction.price}}</span>
                                 </p>
-                                <a class="btn btn-primary">View Details</a>
+                                <a href="@Url.Action("Details", "Home")" class="btn btn-primary">View Details</a>
                             </div>
                         </div>
                     </div>
@@ -94,13 +103,3 @@
         </div>
     </div>
 </div>
-
-@section scripts{
-
-    <script src="~/Scripts/angular.js"></script>
-    <script src="~/Scripts/js/app.js"></script>
-    <script src="~/Scripts/js/HomeIndexController.js"></script>
-
-    <script src="~/Content/plugins/slick-1.5.9/slick/slick.min.js"></script>
-    <script src="~/Content/plugins/slick-1.5.9/angular-slick/slick.min.js"></script>
-}

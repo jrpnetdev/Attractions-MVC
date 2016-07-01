@@ -4,9 +4,9 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using WebDevApr.Data;
+using Attractions.Data;
 
-namespace MessageBoard.Controllers
+namespace Attractions.Controllers
 {
   public class TopicsController : ApiController
   {
