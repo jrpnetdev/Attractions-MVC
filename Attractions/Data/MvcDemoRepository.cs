@@ -23,5 +23,10 @@ namespace Attractions.Data
         {
             return _ctx.Attractions.Where(a => a.IsFeatured);
         }
+
+        public IQueryable<Attraction> FindAttractions(string searchText)
+        {
+            return _ctx.Attractions.Where(a => a.Title.ToLower().Contains(searchText.ToLower()));
+        }
     }
 }

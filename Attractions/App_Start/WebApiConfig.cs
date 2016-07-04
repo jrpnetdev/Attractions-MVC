@@ -29,6 +29,12 @@ namespace Attractions
                 defaults: new { controller = "attractions", id = RouteParameter.Optional }
              );
 
+            config.Routes.MapHttpRoute(
+                name: "FeaturedAttractions",
+                routeTemplate: "api/v1/featured/{id}",
+                defaults: new { controller = "featured", id = RouteParameter.Optional }
+             );
+
             //config.Routes.MapHttpRoute(
             //    name: "DefaultApi",
             //    routeTemplate: "api/{controller}/{id}",

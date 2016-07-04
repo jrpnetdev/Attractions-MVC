@@ -755,6 +755,8 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\js\DataService.js" />
+    <Content Include="Scripts\js\FeaturedController.js" />
     <Content Include="Scripts\js\HomeIndexController.js" />
     <Content Include="Scripts\js\app.js" />
     <Content Include="Scripts\script.js" />
@@ -767,6 +769,8 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\FavouritesController.cs" />
+    <Compile Include="Controllers\FeaturedController.cs" />
     <Compile Include="Controllers\AttractionsController.cs" />
     <Compile Include="Data\MvcDemoContext.cs" />
     <Compile Include="Data\IRepository.cs" />

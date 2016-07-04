@@ -4,40 +4,28 @@
 
     "use strict";
 
-    angular.module("app")
-        .controller("HomeIndexController", homeIndexController);
+    angular.module("app").controller("HomeIndexController", homeIndexController);
 
-    function homeIndexController($scope, $http) {
+    function homeIndexController($scope, dataService) {
 
+        $scope.search = "";
         $scope.Attractions = [];
-        $scope.Featured = [];
         $scope.Favourites = [];
-
-        $scope.ready = false;
-
 
         $scope.addToFavourites = function() {
             //TODO
-            $scope.Favourites.push(this.attraction);
-            console.log(this.attraction);
+
+            var attractionId = this.attraction.id;
+            //$http.post("/api/v1/attractions/" + attractionId)...
+
+            console.log(this.attraction.id);
         }
 
-        $http.get("/api/v1/attractions?featured=true")
-            .then(function (response) {
-                // Success
-                angular.copy(response.data, $scope.Featured);
-                $scope.ready = true;
-            }, function () {
-                // Failure
-            });
+        $scope.Attractions = dataService.getAllAttractions();
 
-        $http.get("/api/v1/attractions")
-            .then(function (response) {
-                // Success
-                angular.copy(response.data, $scope.Attractions);
-            }, function () {
-                // Failure
-            });
+        $scope.searchAttractions = function (searchText) {
+            $scope.Attractions = dataService.findAttractions(searchText);
+        }
 
         $scope.breakpoints = [
             {
@@ -62,8 +50,6 @@
                 }
             }
         ];
-
-
     }
 
 })();
