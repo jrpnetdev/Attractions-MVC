@@ -45,7 +45,7 @@
                 <div ng-repeat="attraction in Attractions">
                     <div class="col-md-3 pricing-stack">
                         <div ng-class="$index%2==0 ? 'well active' : 'well'">
-                            <span class="add"><i class="fa fa-plus-square" title="Add to Favourites" ng-click="addToFavourites()"></i></span>
+                            <span class="add"><i class="fa fa-plus-square" title="Add to Favourites" ng-click="addToFavourites(attraction.id)"></i></span>
                             <h3 class="title">
                                 <span class="em">{{attraction.title}}</span> <span class="fancy">{{attraction.type}}</span>
                             </h3>

@@ -759,6 +759,7 @@
     <Content Include="Scripts\js\FeaturedController.js" />
     <Content Include="Scripts\js\HomeIndexController.js" />
     <Content Include="Scripts\js\app.js" />
+    <Content Include="Scripts\js\SearchController.js" />
     <Content Include="Scripts\script.js" />
     <Content Include="Scripts\script.min.js" />
     <Content Include="Web.config">

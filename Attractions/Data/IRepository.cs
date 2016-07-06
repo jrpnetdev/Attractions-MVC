@@ -14,7 +14,11 @@ namespace Attractions.Data
 
         IQueryable<Attraction> FindAttractions(string searchText);
 
-        //void AddToFavourites();
+        Attraction FindAttractionById(int id);
+
+        //List<Attraction> GetAllFavourites();
+
+        //void AddToAttractions(int id);
 
         //void RemoveFromFavourites();
     }

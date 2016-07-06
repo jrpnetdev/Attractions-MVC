@@ -12,21 +12,25 @@
         $scope.Attractions = [];
         $scope.Favourites = [];
 
-        $scope.addToFavourites = function() {
-            //TODO
-
-            var attractionId = this.attraction.id;
-            //$http.post("/api/v1/attractions/" + attractionId)...
-
-            console.log(this.attraction.id);
-        }
-
         $scope.Attractions = dataService.getAllAttractions();
+        $scope.Favourites = dataService.getFavourites();
 
         $scope.searchAttractions = function (searchText) {
             $scope.Attractions = dataService.findAttractions(searchText);
         }
 
+        $scope.addToFavourites = function (id) {
+            dataService.addToFavourites(id);
+            $scope.Favourites = dataService.getFavourites();
+        }
+
+        $scope.removeFromFavourites = function (id) {
+            dataService.removeFromFavourites(id);
+            $scope.Favourites = dataService.getFavourites();
+            console.log(id);
+        }
+
+        // Slick Slider breakpoints
         $scope.breakpoints = [
             {
                 breakpoint: 1024,
