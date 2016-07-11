@@ -42,7 +42,47 @@
                     <small>Great savings on hundreds of attractions Worldwide</small>
                 </h2>
 
-                <div ng-repeat="attraction in Attractions">
+                <div id="searchBar">
+                    <h4>Filter & Sort</h4>
+
+                    <div class="col col-md-4">
+                        <div class="form-group">
+                            <label for="select1">Order Attractions by:</label>
+                            <select class="form-control" id="select1" ng-model="sortOrder">
+                                <option value="+title">Title</option>
+                                <option value="-title">Title Desc</option>
+                                <option value="+price">Price Asc</option>
+                                <option value="-price">Price Desc</option>
+                                <option value="+country">Country</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col col-md-4">
+                        <div class="form-group">
+                            <label for="sel2">Filter by Continent:</label>
+                            <select class="form-control" id="sel2">
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="mercedes">Mercedes</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col col-md-4">
+                        <div class="form-group">
+                            <label for="radio1">Filter Attractions by:</label>
+                            <div class="form-control" id="radio1">
+                                <label class="radio-inline"><input type="radio" name="optradio">Option 1</label>
+                                <label class="radio-inline"><input type="radio" name="optradio">Option 2</label>
+                                <label class="radio-inline"><input type="radio" name="optradio">Option 3</label> 
+                            </div>
+                        </div>
+                    </div> 
+                </div>   
+
+                <div ng-repeat="attraction in Attractions | orderBy:sortOrder">
                     <div class="col-md-3 pricing-stack">
                         <div ng-class="$index%2==0 ? 'well active' : 'well'">
                             <span class="add"><i class="fa fa-plus-square" title="Add to Favourites" ng-click="addToFavourites(attraction.id)"></i></span>

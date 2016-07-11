@@ -17,8 +17,7 @@
             getFeaturedAttractions: getFeaturedAttractions,
             findAttractions: findAttractions,
             getFavourites: getFavourites,
-            addToFavourites: addToFavourites,
-            removeFromFavourites: removeFromFavourites
+            addToFavourites: addToFavourites
         }
 
         function getAllAttractions() {
@@ -75,16 +74,6 @@
                     // Success
                 })
                 .error(function (data, status, header, config) {
-                    console.log("error :" + data + "   status:" + status + "   header:" + header + "   config:" + config);
-                });
-        }
-
-        function removeFromFavourites(id) {
-            $http.delete("/api/v1/favourites/" + id)
-                .then(function () {
-                    // Success
-                })
-                .then(function (data, status, header, config) {
                     console.log("error :" + data + "   status:" + status + "   header:" + header + "   config:" + config);
                 });
         }

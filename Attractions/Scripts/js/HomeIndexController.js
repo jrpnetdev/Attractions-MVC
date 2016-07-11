@@ -6,7 +6,7 @@
 
     angular.module("app").controller("HomeIndexController", homeIndexController);
 
-    function homeIndexController($scope, dataService) {
+    function homeIndexController($scope, $http, dataService) {
 
         $scope.search = "";
         $scope.Attractions = [];
@@ -25,10 +25,18 @@
         }
 
         $scope.removeFromFavourites = function (id) {
-            dataService.removeFromFavourites(id);
-            $scope.Favourites = dataService.getFavourites();
-            console.log(id);
+            $http.delete("/api/v1/favourites/" + id)
+                .success(function (response) {
+                    // Success
+                    $scope.Favourites = dataService.getFavourites();
+                })
+                .error(function (data, status, header, config) {
+                    // Failure
+                    console.log("error :" + data + "   status:" + status + "   header:" + header + "   config:" + config);
+                });
         }
+
+        $scope.sortOrder = "id";
 
         // Slick Slider breakpoints
         $scope.breakpoints = [
