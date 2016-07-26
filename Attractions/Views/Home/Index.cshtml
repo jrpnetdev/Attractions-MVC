@@ -3,8 +3,15 @@
     ViewBag.Title = "Index";
 }
 
+@section styles{
+    <link href="~/Content/plugins/slick-1.6.0/slick/slick.css" rel="stylesheet"/>
+    <link href="~/Content/plugins/slick-1.6.0/slick/slick-theme.css" rel="stylesheet"/>
+}
+
 @section scripts{
     <script src="~/Scripts/js/FeaturedController.js"></script>
+    <script src="~/Content/plugins/slick-1.6.0/slick/slick.js"></script>
+    <script src="~/Content/plugins/angular-slick/slick.js"></script>
 }
 
 <div>
@@ -20,14 +27,16 @@
 
                 <!-- ======== SLICK SLIDER ======== -->
                 <div ng-controller="FeaturedController">
-                    <slick class="slider" infinite="true" slides-to-show="4" slides-to-scroll="4" dots="true" responsive="breakpoints">
-                        <div ng-repeat="feature in Featured">
-                            <div>
-                                <h3 class="text-center">{{feature.title}}</h3>
-                                <a href="@Url.Action("Details", "Home")"><img data-lazy="{{feature.imageUrl}}" /></a>
+                    <div ng-if="Featured && slickReady">
+                        <slick class="slider" infinite="true" slides-to-show="4" slides-to-scroll="4" dots="true" responsive="breakpoints" init-onload="true" data="Featured">
+                            <div ng-repeat="feature in Featured">
+                                <div>
+                                    <h3 class="text-center">{{feature.title}}</h3>
+                                    <a href="@Url.Action("Details", "Home")"><img ng-src="{{feature.imageUrl}}" /></a>
+                                </div>
                             </div>
-                        </div>
-                    </slick>
+                        </slick>
+                    </div>
                 </div>
             </div>
         </div>
@@ -58,28 +67,18 @@
                         </div>
                     </div>
 
-                    <div class="col col-md-4">
+                    <div class="col col-md-6">
                         <div class="form-group">
-                            <label for="sel2">Filter by Continent:</label>
-                            <select class="form-control" id="sel2">
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                                <option value="mercedes">Mercedes</option>
-                                <option value="audi">Audi</option>
-                            </select>
+                            <label for="radio1">Filter Attractions in:</label>
+                            <div class="form-control" id="radio1">
+                                <label class="radio-inline"><input type="radio" name="optradio">Europe</label>
+                                <label class="radio-inline"><input type="radio" name="optradio">Asia</label>
+                                <label class="radio-inline"><input type="radio" name="optradio">North America</label>
+                                <label class="radio-inline"><input type="radio" name="optradio">South America</label> 
+                            </div>
                         </div>
                     </div>
 
-                    <div class="col col-md-4">
-                        <div class="form-group">
-                            <label for="radio1">Filter Attractions by:</label>
-                            <div class="form-control" id="radio1">
-                                <label class="radio-inline"><input type="radio" name="optradio">Option 1</label>
-                                <label class="radio-inline"><input type="radio" name="optradio">Option 2</label>
-                                <label class="radio-inline"><input type="radio" name="optradio">Option 3</label> 
-                            </div>
-                        </div>
-                    </div> 
                 </div>   
 
                 <div ng-repeat="attraction in Attractions | orderBy:sortOrder">
