@@ -28,5 +28,12 @@ namespace Attractions.Controllers
 
             return attractions;
         }
+
+        public IEnumerable<Attraction> Get(int id, string continent)
+        {
+            var attractions = String.IsNullOrWhiteSpace(continent) ? _repo.GetAllAttractions().ToList() : _repo.FindAttractionsInContinent(continent).ToList();
+
+            return attractions;
+        }
     }
 }

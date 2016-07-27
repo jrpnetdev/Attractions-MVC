@@ -9,28 +9,38 @@
     function homeIndexController($scope, $http, dataService) {
 
         $scope.search = "";
+        $scope.Continent = "All";
         $scope.Attractions = [];
         $scope.Favourites = [];
 
         $scope.Attractions = dataService.getAllAttractions();
         $scope.Favourites = dataService.getFavourites();
 
-        $scope.searchAttractions = function (searchText) {
+        $scope.searchAttractions = function(searchText) {
             $scope.Attractions = dataService.findAttractions(searchText);
         }
 
-        $scope.addToFavourites = function (id) {
+        $scope.filterAttractionsByContinent = function(continent) {
+            console.log(continent);
+            if (continent === "All") {
+                $scope.Attractions = dataService.getAllAttractions();
+            } else {
+                $scope.Attractions = dataService.findAttractionsInContinent(continent);
+            }
+        }
+
+        $scope.addToFavourites = function(id) {
             dataService.addToFavourites(id);
             $scope.Favourites = dataService.getFavourites();
         }
 
-        $scope.removeFromFavourites = function (id) {
+        $scope.removeFromFavourites = function(id) {
             $http.delete("/api/v1/favourites/" + id)
-                .success(function (response) {
+                .success(function(response) {
                     // Success
                     $scope.Favourites = dataService.getFavourites();
                 })
-                .error(function (data, status, header, config) {
+                .error(function(data, status, header, config) {
                     // Failure
                     console.log("error :" + data + "   status:" + status + "   header:" + header + "   config:" + config);
                 });

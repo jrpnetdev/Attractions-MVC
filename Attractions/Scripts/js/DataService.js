@@ -16,6 +16,7 @@
             getAllAttractions: getAllAttractions,
             getFeaturedAttractions: getFeaturedAttractions,
             findAttractions: findAttractions,
+            findAttractionsInContinent: findAttractionsInContinent,
             getFavourites: getFavourites,
             addToFavourites: addToFavourites
         }
@@ -47,6 +48,18 @@
         function findAttractions(searchText) {
 
             $http.get("/api/v1/attractions?searchText=" + searchText)
+                .then(function (response) {
+                    // Success
+                    angular.copy(response.data, attractions);
+                }, function () {
+                    // Failure
+                });
+            return attractions;
+        }
+
+        function findAttractionsInContinent(continent) {
+
+            $http.get("/api/v1/attractions?id=1&continent=" + continent)
                 .then(function (response) {
                     // Success
                     angular.copy(response.data, attractions);

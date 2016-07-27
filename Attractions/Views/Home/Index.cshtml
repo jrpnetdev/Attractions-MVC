@@ -47,13 +47,12 @@
             <!-- 'All' Attractions -->
             <div class="block">
                 <h2 class="title-divider">
-                    <span>All: <span class="de-em">Attractions</span></span>
+                    <span ng-model="Continent">{{Continent}} <span class="de-em">Attractions</span></span>
                     <small>Great savings on hundreds of attractions Worldwide</small>
                 </h2>
 
                 <div id="searchBar">
-                    <h4>Filter & Sort</h4>
-
+                    <h4>Filter & Sort: <span class="small">(Showing X of Y Attractions)</span></h4>
                     <div class="col col-md-4">
                         <div class="form-group">
                             <label for="select1">Order Attractions by:</label>
@@ -67,14 +66,17 @@
                         </div>
                     </div>
 
-                    <div class="col col-md-6">
+                    <div class="col col-md-8">
                         <div class="form-group">
                             <label for="radio1">Filter Attractions in:</label>
                             <div class="form-control" id="radio1">
-                                <label class="radio-inline"><input type="radio" name="optradio">Europe</label>
-                                <label class="radio-inline"><input type="radio" name="optradio">Asia</label>
-                                <label class="radio-inline"><input type="radio" name="optradio">North America</label>
-                                <label class="radio-inline"><input type="radio" name="optradio">South America</label> 
+                                <label class="radio-inline"><input type="radio" name="optradio" ng-change="filterAttractionsByContinent('All')" ng-model="Continent" value="All"/> ALL </label>
+                                <label class="radio-inline"><input type="radio" name="optradio" ng-change="filterAttractionsByContinent('Africa')" ng-model="Continent" value="Africa"/> Africa </label>
+                                <label class="radio-inline"><input type="radio" name="optradio" ng-change="filterAttractionsByContinent('Asia')" ng-model="Continent" value="Asia"/> Asia </label>
+                                <label class="radio-inline"><input type="radio" name="optradio" ng-change="filterAttractionsByContinent('Australia')" ng-model="Continent" value="Australia" /> Australia </label>
+                                <label class="radio-inline"><input type="radio" name="optradio" ng-change="filterAttractionsByContinent('Europe')" ng-model="Continent" value="Europe"/> Europe </label>
+                                <label class="radio-inline"><input type="radio" name="optradio" ng-change="filterAttractionsByContinent('North America')" ng-model="Continent" value="North America"/> North America </label>
+                                <label class="radio-inline"><input type="radio" name="optradio" ng-change="filterAttractionsByContinent('South America')" ng-model="Continent" value="South America" /> South America </label>
                             </div>
                         </div>
                     </div>

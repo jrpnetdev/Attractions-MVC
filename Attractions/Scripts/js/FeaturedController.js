@@ -16,7 +16,7 @@
 
         $timeout(function () {
             $scope.slickReady = true;
-        }, 500);
+        }, 1000);
     }
 
 })();

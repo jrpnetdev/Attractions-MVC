@@ -9,8 +9,6 @@ namespace Attractions.Data
     {
         private readonly MvcDemoContext _ctx;
 
-       // private List<Attraction> _favourites;
-
         public MvcDemoRepository(MvcDemoContext ctx)
         {
             _ctx = ctx;
@@ -31,32 +29,15 @@ namespace Attractions.Data
             return _ctx.Attractions.Where(a => a.Title.ToLower().Contains(searchText.ToLower()));
         }
 
+        public IQueryable<Attraction> FindAttractionsInContinent(string continent)
+        {
+            return _ctx.Attractions.Where(a => a.Continent.ToLower().Equals(continent.ToLower()));
+        }
+
         public Attraction FindAttractionById(int id)
         {
             return _ctx.Attractions.FirstOrDefault(a => a.Id == id);
         }
-
-        //public List<Attraction> GetAllFavourites()
-        //{
-        //    return _favourites;
-        //}
-
-        //public void AddToAttractions(int id)
-        //{
-        //    if (_favourites == null)
-        //    {
-        //        _favourites = new List<Attraction>();
-        //    }
-
-        //    var attraction = FindAttractionById(id);
-
-        //    _favourites.Add(attraction);
-
-        //    if (_favourites != null)
-        //    {
-        //        //
-        //    }
-        //}
 
     }
 }

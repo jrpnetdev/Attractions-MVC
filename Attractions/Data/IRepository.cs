@@ -14,12 +14,9 @@ namespace Attractions.Data
 
         IQueryable<Attraction> FindAttractions(string searchText);
 
+        IQueryable<Attraction> FindAttractionsInContinent(string continent);
+
         Attraction FindAttractionById(int id);
 
-        //List<Attraction> GetAllFavourites();
-
-        //void AddToAttractions(int id);
-
-        //void RemoveFromFavourites();
     }
 }
