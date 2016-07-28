@@ -6,7 +6,7 @@
 
     angular.module("app").controller("HomeIndexController", homeIndexController);
 
-    function homeIndexController($scope, $http, dataService) {
+    function homeIndexController($scope, $http, dataService, toastr) {
 
         $scope.search = "";
         $scope.Continent = "All";
@@ -40,6 +40,7 @@
         $scope.addToFavourites = function(id) {
             dataService.addToFavourites(id);
             $scope.Favourites = dataService.getFavourites();
+            toastr.success('Success', 'Successfully added to Favourites');
         }
 
         $scope.removeFromFavourites = function(id) {

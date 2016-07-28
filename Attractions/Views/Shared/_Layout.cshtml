@@ -93,7 +93,7 @@
                 <!--Header search region - hidden by default -->
                 <div class="header-search">
                     <form class="search-form container">
-                        <input type="text" name="search" ng-model="search" class="form-control search" value="" placeholder="Search">
+                        <input type="text" name="search" ng-model="search" class="form-control search" value="" placeholder="Search" ng-keypress="($event.which === 13)?searchAttractions(search):0">
                         <button type="button" class="btn btn-link" ng-click="searchAttractions(search)"><span class="sr-only">Search </span><i class="fa fa-search fa-flip-horizontal search-icon"></i></button>
                         <button type="button" class="btn btn-link close-btn" data-toggle="search-form-close"><span class="sr-only">Close </span><i class="fa fa-times search-icon"></i></button>
                     </form>
@@ -339,6 +339,7 @@
         <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 
         <script src="~/Scripts/angular.js"></script>
+        <script src="~/Scripts/angular-animate.js"></script>
         <script src="~/Scripts/js/app.js"></script>
         <script src="~/Scripts/js/DataService.js"></script>
         <script src="~/Scripts/js/HomeIndexController.js"></script>

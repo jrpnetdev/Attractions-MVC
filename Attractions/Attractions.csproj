@@ -159,6 +159,12 @@
     <Content Include="Content\pics\sydney.jpg" />
     <Content Include="Content\pics\the-eiffel-tower-tour.jpg" />
     <Content Include="Content\pics\Universal-Studios.jpg" />
+    <Content Include="Content\plugins\angular-toastr\angular-toastr.css" />
+    <Content Include="Content\plugins\angular-toastr\angular-toastr.js" />
+    <Content Include="Content\plugins\angular-toastr\angular-toastr.min.css" />
+    <Content Include="Content\plugins\angular-toastr\angular-toastr.min.js" />
+    <Content Include="Content\plugins\angular-toastr\angular-toastr.tpls.js" />
+    <Content Include="Content\plugins\angular-toastr\angular-toastr.tpls.min.js" />
     <Content Include="Content\plugins\bootstrap-hover-dropdown\bootstrap-hover-dropdown.js" />
     <Content Include="Content\plugins\bootstrap-hover-dropdown\bootstrap-hover-dropdown.min.js" />
     <Content Include="Content\plugins\clingify\clingify.css" />
@@ -741,6 +747,8 @@
     <Content Include="Content\plugins\clingify\demo-page\app\styles\partials\_table.scss" />
     <Content Include="Content\plugins\clingify\demo-page\bower.json" />
     <Content Include="Content\plugins\clingify\demo-page\package.json" />
+    <Content Include="Scripts\angular-animate.js" />
+    <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
@@ -753,6 +761,7 @@
     <Content Include="Content\plugins\slick-1.6.0\slick\slick-theme.scss" />
     <Content Include="Content\plugins\slick-1.6.0\slick\slick.less" />
     <Content Include="Content\plugins\slick-1.6.0\slick\slick.scss" />
+    <Content Include="Scripts\angular-animate.min.js.map" />
     <None Include="Scripts\jquery-1.12.0.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.0.js" />
     <Content Include="Scripts\jquery-1.12.0.min.js" />
