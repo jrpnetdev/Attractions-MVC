@@ -21,17 +21,12 @@
             addToFavourites: addToFavourites
         }
 
+        
         function getAllAttractions() {
-            
-            $http.get("/api/v1/attractions")
-                .then(function (response) {
-                    // Success
-                    angular.copy(response.data, attractions);
-                }, function () {
-                    // Failure
-            });
-            return attractions;
+
+            return $http.get("/api/v1/attractions");
         }
+
 
         function getFeaturedAttractions() {
             

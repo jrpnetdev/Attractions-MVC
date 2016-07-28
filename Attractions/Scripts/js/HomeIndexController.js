@@ -12,8 +12,17 @@
         $scope.Continent = "All";
         $scope.Attractions = [];
         $scope.Favourites = [];
+        $scope.totalAttractions = 0;
 
-        $scope.Attractions = dataService.getAllAttractions();
+        dataService.getAllAttractions()
+            .then(function (response) {
+                // Success
+                $scope.Attractions = response.data;
+                $scope.totalAttractions = $scope.Attractions.length;
+            }, function () {
+                // Failure
+            });
+
         $scope.Favourites = dataService.getFavourites();
 
         $scope.searchAttractions = function(searchText) {
@@ -21,7 +30,6 @@
         }
 
         $scope.filterAttractionsByContinent = function(continent) {
-            console.log(continent);
             if (continent === "All") {
                 $scope.Attractions = dataService.getAllAttractions();
             } else {
