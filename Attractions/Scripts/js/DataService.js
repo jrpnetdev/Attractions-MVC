@@ -16,6 +16,7 @@
             getAllAttractions: getAllAttractions,
             getFeaturedAttractions: getFeaturedAttractions,
             findAttractions: findAttractions,
+            findAttractionById: findAttractionById,
             findAttractionsInContinent: findAttractionsInContinent,
             getFavourites: getFavourites,
             addToFavourites: addToFavourites
@@ -43,6 +44,18 @@
         function findAttractions(searchText) {
 
             $http.get("/api/v1/attractions?searchText=" + searchText)
+                .then(function (response) {
+                    // Success
+                    angular.copy(response.data, attractions);
+                }, function () {
+                    // Failure
+                });
+            return attractions;
+        }
+
+        function findAttractionById(id) {
+
+            $http.get("/api/v1/attractions?id=" + id)
                 .then(function (response) {
                     // Success
                     angular.copy(response.data, attractions);

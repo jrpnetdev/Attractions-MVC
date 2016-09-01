@@ -13,7 +13,7 @@
 Display a list of holiday attractions so users can search and add them to their Favourite list. 
 They can then view their current list of favourites and remove them from this list if they wish.
 
-They can also search, filter and sort attractions by country, region and destination.
+They can also search, filter by continent and order attractions by title, price and country.
 
 
 ###Features:
@@ -31,6 +31,8 @@ They can also search, filter and sort attractions by country, region and destina
  - Run 'Update-Database' on Package Manager Console to create and seed Database.
 
  - Run the application
+
+ Please Note: If you experience any layout, format issues on the initial application start or page load, please just reload the tab/ page (F5 in browser).
 
 ###Please Note:
 

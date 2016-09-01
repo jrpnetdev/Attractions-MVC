@@ -26,17 +26,7 @@
                     <small>Click on attraction for more information</small>
                 </h2>
 
-                <!-- ======== SLICK SLIDER ======== -->
-                <div ng-controller="FeaturedController">
-                    <slick class="slider" infinite="true" slides-to-show="4" slides-to-scroll="4" dots="true" responsive="breakpoints">
-                        <div ng-repeat="feature in Featured">
-                            <div>
-                                <h3 class="text-center">{{feature.title}}</h3>
-                                <a href="@Url.Action("Details", "Home")"><img data-lazy="{{feature.imageUrl}}" /></a>
-                            </div>
-                        </div>
-                    </slick>
-                </div>
+                @Html.Partial("~/Views/Shared/_FeaturedAttractions.cshtml")
             </div>
         </div>
 
@@ -50,6 +40,9 @@
                     <small>Great savings on hundreds of attractions Worldwide</small>
                 </h2>
 
+
+                <div ng-hide="Favourites.length">No Favourites Selected</div>
+
                 <div ng-repeat="attraction in Favourites">
                     <div class="col-md-3 pricing-stack">
                         <div ng-class="$index%2==0 ? 'well active' : 'well'">
@@ -57,7 +50,7 @@
                             <h3 class="title">
                                 <span class="em">{{attraction.title}}</span> <span class="fancy">{{attraction.type}}</span>
                             </h3>
-                            <img ng-src="{{attraction.imageUrl}}" />
+                            <img ng-src="{{attraction.imageUrl}}"/>
                             <ul class="unstyled points">
                                 <li>5 star hotels</li>
                                 <li>River Cruise</li>

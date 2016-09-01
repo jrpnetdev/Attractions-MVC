@@ -35,5 +35,12 @@ namespace Attractions.Controllers
 
             return attractions;
         }
+
+        public Attraction Get(int id)
+        {
+            var attraction = _repo.FindAttractionById(id);
+
+            return attraction;
+        }
     }
 }

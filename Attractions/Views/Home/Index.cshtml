@@ -28,19 +28,7 @@
                     <small>Click on attraction for more information</small>
                 </h2>
 
-                <!-- ======== SLICK SLIDER ======== -->
-                <div ng-controller="FeaturedController">
-                    <div ng-if="Featured && slickReady">
-                        <slick class="slider" infinite="true" slides-to-show="4" slides-to-scroll="4" dots="true" responsive="breakpoints" init-onload="true" data="Featured">
-                            <div ng-repeat="feature in Featured">
-                                <div>
-                                    <h3 class="text-center">{{feature.title}}</h3>
-                                    <a href="@Url.Action("Details", "Home")"><img ng-src="{{feature.imageUrl}}" /></a>
-                                </div>
-                            </div>
-                        </slick>
-                    </div>
-                </div>
+                @Html.Partial("~/Views/Shared/_FeaturedAttractions.cshtml")
             </div>
         </div>
 

@@ -37,10 +37,11 @@
             }
         }
 
-        $scope.addToFavourites = function(id) {
+        $scope.addToFavourites = function (id) { 
             dataService.addToFavourites(id);
             $scope.Favourites = dataService.getFavourites();
-            toastr.success('Success', 'Successfully added to Favourites');
+            var toastrAttraction = dataService.findAttractionById(id);
+            toastr.success('Successfully added to Favourites', toastrAttraction.title + ' ' + toastrAttraction.type);
         }
 
         $scope.removeFromFavourites = function(id) {
