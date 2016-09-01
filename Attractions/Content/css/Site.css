@@ -26,7 +26,7 @@
     margin-right: auto;
 }
 
-/* added the following to give the background color of the arrows as red for visibility, the default which can be found in the slick-theme.css was white */
+/* added the following to give the background colour of the arrows as green for visibility, the default which can be found in the slick-theme.css was white */
 .slick-prev:before,
 .slick-next:before {
     color: #55a79a;
@@ -55,7 +55,8 @@
     text-align: center;
     font-size: 16px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    margin-top: 40px;
 }
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {

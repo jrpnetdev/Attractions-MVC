@@ -19,8 +19,9 @@
                 // Success
                 $scope.Attractions = response.data;
                 $scope.totalAttractions = $scope.Attractions.length;
-            }, function () {
+            }, function (data, status, header, config) {
                 // Failure
+                console.log("error :" + data + "   status:" + status + "   header:" + header + "   config:" + config);
             });
 
         $scope.Favourites = dataService.getFavourites();
@@ -38,11 +39,25 @@
         }
 
         $scope.addToFavourites = function (id) { 
-            dataService.addToFavourites(id);
-            $scope.Favourites = dataService.getFavourites();
-            var toastrAttraction = dataService.findAttractionById(id);
-            toastr.success('Successfully added to Favourites', toastrAttraction.title + ' ' + toastrAttraction.type);
+            dataService.addToFavourites(id)
+                .success(function (response) {
+                    // Success
+                    dataService.findAttractionById(id)
+                        .then(function (response) {
+                            // Success
+                            toastr.success('Successfully added to Favourites', response.data.title + ' ' + response.data.type);
+                        }, function (data, status, header, config) {
+                            // Failure
+                            console.log("error :" + data + "   status:" + status + "   header:" + header + "   config:" + config);
+                        });  
+
+                    $scope.Favourites = dataService.getFavourites();
+                })
+                .error(function (data, status, header, config) {
+                    console.log("error :" + data + "   status:" + status + "   header:" + header + "   config:" + config);
+                });            
         }
+
 
         $scope.removeFromFavourites = function(id) {
             $http.delete("/api/v1/favourites/" + id)

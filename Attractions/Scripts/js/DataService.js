@@ -54,15 +54,7 @@
         }
 
         function findAttractionById(id) {
-
-            $http.get("/api/v1/attractions?id=" + id)
-                .then(function (response) {
-                    // Success
-                    angular.copy(response.data, attractions);
-                }, function () {
-                    // Failure
-                });
-            return attractions;
+            return $http.get("/api/v1/attractions?id=" + id);
         }
 
         function findAttractionsInContinent(continent) {
@@ -90,13 +82,7 @@
         }
 
         function addToFavourites(id) {
-            $http.post("/api/v1/favourites/" + id)
-                .success(function(response) {
-                    // Success
-                })
-                .error(function (data, status, header, config) {
-                    console.log("error :" + data + "   status:" + status + "   header:" + header + "   config:" + config);
-                });
+            return $http.post("/api/v1/favourites/" + id);
         }
     }
 
