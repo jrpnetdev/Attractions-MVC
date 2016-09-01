@@ -41,7 +41,12 @@
                 </h2>
 
 
-                <div ng-hide="Favourites.length">No Favourites Selected</div>
+                <div class="no-favourites" ng-hide="Favourites.length">
+                    <span class="alert alert-info">
+                        No favourites currently selected - Please add favourites.
+                        <a href='@Url.Action("Index", "Home")'><i class="fa fa-home"></i> Click here to go back.</a>
+                    </span>
+                </div>
 
                 <div ng-repeat="attraction in Favourites">
                     <div class="col-md-3 pricing-stack">

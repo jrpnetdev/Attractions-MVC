@@ -824,6 +824,7 @@
     <Content Include="Views\Partial\_Banner.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
     <Content Include="Views\Shared\_FeaturedAttractions.cshtml" />
+    <Content Include="Views\Shared\_IndexSearchBar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
