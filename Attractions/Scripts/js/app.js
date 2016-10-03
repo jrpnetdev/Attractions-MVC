@@ -4,6 +4,6 @@
 
     "use strict";
 
-    angular.module("app", ['ngAnimate', 'slick', 'toastr']);
+    angular.module("app", ['ngAnimate', 'slick', 'toastr', 'ui.bootstrap']);
 
 })();

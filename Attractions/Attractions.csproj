@@ -143,22 +143,43 @@
     <Content Include="Content\img\misc\bg_timeline-line.png" />
     <Content Include="Content\img\misc\icon_loading.gif" />
     <Content Include="Content\img\misc\map.png" />
+    <Content Include="Content\pics\aqualand-algarve.jpg" />
     <Content Include="Content\pics\athens-city-tour.jpg" />
+    <Content Include="Content\pics\Aztec-adventure.jpg" />
+    <Content Include="Content\pics\bahamas-sun.jpg" />
     <Content Include="Content\pics\bangkok.jpg" />
     <Content Include="Content\pics\berlin.jpg" />
+    <Content Include="Content\pics\big-bus-tours-paris.jpg" />
+    <Content Include="Content\pics\brazil-tour.jpg" />
+    <Content Include="Content\pics\buenos-aires-tour.jpg" />
+    <Content Include="Content\pics\chilie-stargazing.jpg" />
+    <Content Include="Content\pics\city-sightseeing-lima.jpg" />
     <Content Include="Content\pics\copenhagen.jpg" />
     <Content Include="Content\pics\classic-beijing.jpg" />
+    <Content Include="Content\pics\dolphin-adventure.jpg" />
     <Content Include="Content\pics\dubai-city-tour.jpg" />
+    <Content Include="Content\pics\egypt-ocean.jpg" />
     <Content Include="Content\pics\lisbon.jpg" />
     <Content Include="Content\pics\london-aquarium.jpg" />
     <Content Include="Content\pics\london-dungeon.jpg" />
     <Content Include="Content\pics\london-eye.jpg" />
     <Content Include="Content\pics\china.jpg" />
+    <Content Include="Content\pics\los-angeles-tour.jpg" />
+    <Content Include="Content\pics\malaysia-water-park.jpg" />
     <Content Include="Content\pics\Milan.jpg" />
+    <Content Include="Content\pics\moscow-tours.jpg" />
+    <Content Include="Content\pics\munich.jpg" />
+    <Content Include="Content\pics\olympic-adventure.jpg" />
+    <Content Include="Content\pics\oman-tour.jpg" />
+    <Content Include="Content\pics\pyramids-egypt.jpg" />
+    <Content Include="Content\pics\sahara-adventure.jpg" />
     <Content Include="Content\pics\seaworld-orlando.jpg" />
     <Content Include="Content\pics\sydney.jpg" />
+    <Content Include="Content\pics\terra-mitica.jpg" />
+    <Content Include="Content\pics\thailand-tour.jpg" />
     <Content Include="Content\pics\the-eiffel-tower-tour.jpg" />
     <Content Include="Content\pics\Universal-Studios.jpg" />
+    <Content Include="Content\pics\venice-tour.jpg" />
     <Content Include="Content\plugins\angular-toastr\angular-toastr.css" />
     <Content Include="Content\plugins\angular-toastr\angular-toastr.js" />
     <Content Include="Content\plugins\angular-toastr\angular-toastr.min.css" />
@@ -722,6 +743,7 @@
     <Content Include="Content\plugins\slick-1.6.0\slick\slick.css" />
     <Content Include="Content\plugins\slick-1.6.0\slick\slick.js" />
     <Content Include="Content\plugins\slick-1.6.0\slick\slick.min.js" />
+    <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\plugins\flag-icon-css\.editorconfig" />
     <Content Include="Content\plugins\flag-icon-css\bower.json" />
@@ -750,6 +772,10 @@
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.min.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\angular.min.js.map" />
@@ -794,9 +820,9 @@
     <Compile Include="Data\IRepository.cs" />
     <Compile Include="Data\MvcDemoRepository.cs" />
     <Compile Include="Data\User.cs" />
-    <Compile Include="Migrations\201605051830172_Initial.cs" />
-    <Compile Include="Migrations\201605051830172_Initial.Designer.cs">
-      <DependentUpon>201605051830172_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201610032102066_Initial.cs" />
+    <Compile Include="Migrations\201610032102066_Initial.Designer.cs">
+      <DependentUpon>201610032102066_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContactModel.cs" />
@@ -836,8 +862,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201605051830172_Initial.resx">
-      <DependentUpon>201605051830172_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610032102066_Initial.resx">
+      <DependentUpon>201610032102066_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

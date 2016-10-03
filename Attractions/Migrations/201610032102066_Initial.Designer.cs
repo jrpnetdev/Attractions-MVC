@@ -13,7 +13,7 @@ namespace Attractions.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201605051830172_Initial"; }
+            get { return "201610032102066_Initial"; }
         }
         
         string IMigrationMetadata.Source

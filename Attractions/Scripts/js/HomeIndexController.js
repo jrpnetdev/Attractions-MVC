@@ -13,6 +13,7 @@
         $scope.Attractions = [];
         $scope.Favourites = [];
         $scope.totalAttractions = 0;
+        $scope.filteredAttractions = [];
 
         dataService.getAllAttractions()
             .then(function (response) {
@@ -72,6 +73,27 @@
         }
 
         $scope.sortOrder = "id";
+
+
+        // Pagination
+
+        $scope.itemsPerPage = 12;
+        $scope.currentPage = 1;
+
+        $scope.pageCount = function () {
+            return Math.ceil($scope.Attractions / $scope.itemsPerPage);
+        };
+
+        $scope.$watch('currentPage + itemsPerPage', function () {
+            var begin = (($scope.currentPage - 1) * $scope.itemsPerPage),
+              end = begin + $scope.itemsPerPage;
+
+            console.log(begin);
+            console.log(end);
+
+            $scope.filteredAttractions = $scope.Attractions.slice(begin, end);
+        });
+
 
         // Slick Slider breakpoints
         $scope.breakpoints = [
