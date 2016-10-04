@@ -20,6 +20,7 @@
                 // Success
                 $scope.Attractions = response.data;
                 $scope.totalAttractions = $scope.Attractions.length;
+                //updateView();
             }, function (data, status, header, config) {
                 // Failure
                 console.log("error :" + data + "   status:" + status + "   header:" + header + "   config:" + config);
@@ -31,6 +32,7 @@
             $scope.Attractions = dataService.findAttractions(searchText);
         }
 
+        //change to use | filter in view
         $scope.filterAttractionsByContinent = function(continent) {
             if (continent === "All") {
                 $scope.Attractions = dataService.getAllAttractions();
@@ -76,7 +78,6 @@
 
 
         // Pagination
-
         $scope.itemsPerPage = 12;
         $scope.currentPage = 1;
 
@@ -84,15 +85,16 @@
             return Math.ceil($scope.Attractions / $scope.itemsPerPage);
         };
 
-        $scope.$watch('currentPage + itemsPerPage', function () {
-            var begin = (($scope.currentPage - 1) * $scope.itemsPerPage),
-              end = begin + $scope.itemsPerPage;
+        //$scope.$watch('currentPage + itemsPerPage', function () {
+        //    updateView();
+        //});
 
-            console.log(begin);
-            console.log(end);
+        //function updateView() {
+        //    var begin = (($scope.currentPage - 1) * $scope.itemsPerPage),
+        //    end = begin + $scope.itemsPerPage;
 
-            $scope.filteredAttractions = $scope.Attractions.slice(begin, end);
-        });
+        //    $scope.filteredAttractions = $scope.Attractions.slice(begin, end);
+        //}
 
 
         // Slick Slider breakpoints

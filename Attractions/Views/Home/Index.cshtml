@@ -44,6 +44,10 @@
                 
                 @Html.Partial("~/Views/Shared/_IndexSearchBar.cshtml")
 
+                
+                @*Todo: Pagination*@
+                @*<div ng-repeat="attraction in Attractions | filter: {continent:Continent} | orderBy:sortOrder">*@
+
                 <div ng-repeat="attraction in Attractions | orderBy:sortOrder">
                     <div class="col-md-3 pricing-stack">
                         <div ng-class="$index%2==0 ? 'well active' : 'well'">
@@ -69,23 +73,11 @@
         </div>
         
         <div class="row">
-
             <div class="text-center">
-                <ul class="pagination">
-                    <li class="disabled"><a href="#">«</a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">»</a></li>
-                </ul>
+                <ul uib-pagination total-items="totalAttractions" items-per-page="itemsPerPage" ng-model="currentPage" ng-change="pageChanged()"></ul>
             </div>
-
-            @*<div class="text-center">
-                <pagination total-items="totalAttractions" items-per-page="itemsPerPage" ng-model="currentPage" ng-change="pageChanged()"></pagination>
-            </div>*@
         </div>
+
     </div>
 </div>
 
